@@ -1,0 +1,17 @@
+@import '../../App.scss';
+
+
+.navigation{
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation-container{
+    background-color: $primary;
+
+}
+
+.nav-text a, h2.nav-text{
+    color: $background;
+    align-items: initial;
+}

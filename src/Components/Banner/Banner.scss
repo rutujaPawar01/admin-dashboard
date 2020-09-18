@@ -1,0 +1,18 @@
+@import '../../App.scss';
+
+.banner{
+    border: 1px solid black;
+    width: 45%;
+    background-image: url("../../assets/banner.png");
+
+   
+    .intro-container{
+      padding: 5rem 2rem;
+      
+    .paragraph{
+        color:$background;
+        font :Helvetica Neue;;
+      }
+  
+    }
+  }

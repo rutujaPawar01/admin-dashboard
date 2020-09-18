@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  Redirect,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import Dashboard from './Components/Dashboard/Dashboard';
+import LoginPage from './Components/LoginPage/LoginPage';
+
+class App extends Component{
+  constructor() {
+    super();
+    this.state = {
+      isUserAuthenticated: true
+    }
+  }
+
+  setUserAuthentication = (isUserAuthenticated) => {
+      this.setState({isUserAuthenticated:isUserAuthenticated})
+  }
+
+  render(){ 
+    return (
+      <div className="app-container">
+        <Switch>
+          {this.state.isUserAuthenticated && 
+          <>
+          <Route path='/dashboard'>
+            <Dashboard />
+          </Route> <Redirect to='/dashboard' />
+          </>
+          }
+
+          <Route path='/'>
+            <LoginPage setUserAuthentication={this.setUserAuthentication} />
+          </Route>      
+        </Switch>
+
+      </div>
+      );
+    }
 }
 
 export default App;

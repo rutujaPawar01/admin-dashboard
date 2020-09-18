@@ -1,0 +1,32 @@
+
+$primary:#935A36;
+$secondary:#EBEBEB;
+$background:#FBFBFB;
+$text:#935A36;
+$gradient-color-1:#FD9A5B;
+$gradient-color-2:#5E4552;
+$error:#CB2E25;
+
+.app-container{
+  display: flex;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.margin-b-1{
+  margin-bottom: 1rem;;
+}
+
+.border-r-15{
+  border-radius: 15rem;
+}
+
+.error{
+  font-size: small;
+  font: Helvetica Neue;
+  color: $error;
+}
+
+.input-field{
+  background-color: $secondary;
+}

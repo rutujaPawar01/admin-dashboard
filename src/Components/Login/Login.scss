@@ -1,0 +1,29 @@
+@import '../../App.scss';
+
+.login-container{
+    border: 1px solid black;
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .login-controller{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+
+        .login-title{
+            color:$primary;
+            font: Helvetica Neue;
+        }
+
+        .login-button{
+            background-image: linear-gradient(to right, $gradient-color-1 , $gradient-color-2);
+            color:$background;
+        }
+    }
+  }
+  
