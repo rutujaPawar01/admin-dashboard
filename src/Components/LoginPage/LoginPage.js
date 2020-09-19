@@ -8,7 +8,9 @@ function LoginPage(props) {
     return (
      <>
         <Banner />
-        <Login setUserAuthentication={props.setUserAuthentication}/>
+        <Login setUserAuthentication={props.setUserAuthentication}
+         setUserData={props.setUserData}
+        />
      </>
     );
   }

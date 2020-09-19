@@ -35,6 +35,7 @@ class Login extends Component {
         axios.post(url, body).then((response) => {
             this.props.setUserAuthentication(true);
             this.setState({isError : false});
+            this.props.setUserData(response.data.data);
         }).catch((error) => {
             this.setState({isError : true});
         })

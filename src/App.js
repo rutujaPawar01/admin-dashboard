@@ -15,7 +15,8 @@ class App extends Component{
   constructor() {
     super();
     this.state = {
-      isUserAuthenticated: true
+      isUserAuthenticated: false,
+      data: {}
     }
   }
 
@@ -23,20 +24,27 @@ class App extends Component{
       this.setState({isUserAuthenticated:isUserAuthenticated})
   }
 
-  render(){ 
+  setUserData = (data) => {
+    this.setState({data})
+  }
+
+  render(){
     return (
       <div className="app-container">
         <Switch>
           {this.state.isUserAuthenticated && 
           <>
           <Route path='/dashboard'>
-            <Dashboard />
+            <Dashboard data={this.state.data} />
           </Route> <Redirect to='/dashboard' />
           </>
           }
 
           <Route path='/'>
-            <LoginPage setUserAuthentication={this.setUserAuthentication} />
+            <LoginPage 
+            setUserAuthentication={this.setUserAuthentication} 
+            setUserData={this.setUserData}
+            />
           </Route>      
         </Switch>
 
