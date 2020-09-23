@@ -35,7 +35,11 @@ class App extends Component{
           {this.state.isUserAuthenticated && 
           <>
           <Route path='/dashboard'>
-            <Dashboard data={this.state.data} />
+            <Dashboard 
+            data={this.state.data}
+            setUserData={this.setUserData}
+            setUserAuthentication={this.setUserAuthentication} 
+             />
           </Route> <Redirect to='/dashboard' />
           </>
           }

@@ -1,15 +1,15 @@
 @import '../../App.scss';
 
 .login-container{
-    border: 1px solid black;
     width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+
 
 
     .login-controller{
-        border: 1px solid black;
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -27,3 +27,17 @@
     }
   }
   
+  @media only screen and (max-width: 600px) {
+    .banner {
+        display: none;
+        border: none;
+    }
+
+    .login-container{
+        display:flex;
+        // justify-content: center;
+        // align-items: center;
+        // margin-left: 4.5rem;
+        // margin-top: 4.5rem;
+    }
+  }

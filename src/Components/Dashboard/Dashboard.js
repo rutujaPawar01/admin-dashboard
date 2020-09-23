@@ -4,10 +4,14 @@ import { Container, Row, Col, Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import UserCard from '../Card/Card';
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 
 class Dashboard extends Component {
+    signOut=()=>{
+        this.props.setUserAuthentication(false);
+        this.props.setUserData([]); 
+    }
+
     render() {
         const {activeUsers, inactiveUsers, userLogs} = this.props.data;
         const tableHeader = ['#','First Name', 'Last Name', 'Phone Number', 'Address'];
@@ -24,7 +28,7 @@ class Dashboard extends Component {
                                     <Link to = '/dashboard' >Logs</Link>
                                 </li>
                                 <li className='nav-text'>
-                                    <Link to = '/' >Sign Out</Link>
+                                    <Link to = '/' onClick={this.signOut} >Sign Out</Link>
                                 </li>
                             </ul>
                     </Col>

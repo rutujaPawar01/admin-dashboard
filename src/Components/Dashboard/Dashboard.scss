@@ -15,3 +15,20 @@
     color: $background;
     align-items: initial;
 }
+
+.log-table{
+    margin: 1rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .navigation-container {
+        display: none;
+        border: none;
+    }
+    
+    .card{
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+  }
